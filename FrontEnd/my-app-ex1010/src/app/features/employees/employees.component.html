@@ -1,0 +1,9 @@
+<div class="container h-100 d-flex flex-row justify-content-between gap-3">
+  <div class="card w-50 max-h-75 container m-0">
+    <app-form [form]="form" (addEmitter)="addEmployee($event)"></app-form>
+  </div>
+  <div class="card w-50 max-h-75 container m-0 pt-3">
+    <app-table [datasource]="employees" [displayedColumns]="displayedColumns"></app-table>
+  </div>
+</div>
+

@@ -1,0 +1,17 @@
+<table class="table table-dark table-hover" *ngIf="datasource && datasource.length > 0; else noElement">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let column of displayedColumns">{{column}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let element of datasource" class="clickable" (click)="editEventEmitter(element)">
+    <td *ngFor="let prop of displayedColumns">{{element[prop]}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #noElement>
+  <h1>Nessun elemento nella tabella</h1>
+</ng-template>
+
