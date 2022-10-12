@@ -3,7 +3,7 @@
     <app-form [form]="form" (addEmitter)="addEmployee($event)"></app-form>
   </div>
   <div class="card w-50 max-h-75 container m-0 pt-3">
-    <app-table [datasource]="employees" [displayedColumns]="displayedColumns"></app-table>
+    <app-table [datasource]="employees" [displayedColumns]="displayedColumns" (emitterDelete)="deleteEmployee($event)"></app-table>
   </div>
 </div>
 

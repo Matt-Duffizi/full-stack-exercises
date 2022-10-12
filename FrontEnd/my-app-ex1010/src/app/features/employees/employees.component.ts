@@ -15,14 +15,13 @@ export class EmployeesComponent implements OnInit {
   displayedColumns: string[] = ['name', 'surname', 'date'];
   form: FormGroup | undefined;
 
-  tempId: number=0;
+
+  tempId: number = 0;
 
   constructor(private fb: FormBuilder,
               private employeeStore: EmployeeStore,
               private employeeService: EmployeeService) {
   }
-
-
 
   ngOnInit() {
     this.employeeService.getAll().subscribe(employees => {
@@ -39,16 +38,20 @@ export class EmployeesComponent implements OnInit {
     })
   }
 
-
-
   addEmployee(employee: EmployeeModel) {
-    this.tempId = this.employees[this.employees.length-1].id + 1
-    employee.id = this.tempId
-    this.employeeService.post(employee).subscribe(employee => console.log(employee));
+    employee.id = this.employees[this.employees.length - 1].id + 1
+    this.employeeService.post(employee).subscribe();
     this.employees.push(employee);
     this.employeeStore.setUsers(this.employees);
   }
+
+  async deleteEmployee(employee: EmployeeModel) {
+    let id = employee?.id
+    await this.employeeService.delete(id).subscribe(data => {console.log(data)})
+    this.employees.splice(this.employees.indexOf(employee),1)
+  }
 }
+
 
 /*
     selectEmployee(employee: EmployeeModel) {

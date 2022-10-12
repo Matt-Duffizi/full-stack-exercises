@@ -15,7 +15,6 @@ export class DepartmentService {
               private departmentStore: DepartmentStore) {
   }
 
-
   getAll(): Observable<DepartmentModel[]> {
     return this.http.get<DepartmentModel[]>(environment.server + '/department');
   }

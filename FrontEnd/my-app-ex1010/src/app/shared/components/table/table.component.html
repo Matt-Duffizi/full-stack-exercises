@@ -2,11 +2,13 @@
   <thead>
   <tr>
     <th scope="col" *ngFor="let column of displayedColumns">{{column}}</th>
+    <th scope="col">Function</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let element of datasource" class="clickable" (click)="editEventEmitter(element)">
-    <td *ngFor="let prop of displayedColumns">{{element[prop]}}</td>
+  <tr *ngFor="let element of datasource" class="clickable">
+    <td *ngFor="let prop of displayedColumns">{{element[prop]}} </td>
+    <td><button class="alert-danger" (click)="onClickDeleteElement(element)">Delete</button></td>
   </tr>
   </tbody>
 </table>

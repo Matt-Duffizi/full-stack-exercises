@@ -6,6 +6,7 @@ import {formatDate, getLocaleDateFormat} from "@angular/common";
   providedIn: 'root'
 })
 export class EmployeeStore {
+
   private employee: EmployeeModel[] = [];
 
   getUsers(): EmployeeModel[] {
