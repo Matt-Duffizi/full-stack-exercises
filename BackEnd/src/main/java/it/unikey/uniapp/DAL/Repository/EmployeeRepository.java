@@ -2,6 +2,7 @@ package it.unikey.uniapp.DAL.Repository;
 
 import it.unikey.uniapp.DAL.Entity.EmployeeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 
 import java.util.List;

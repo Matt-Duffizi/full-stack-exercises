@@ -1,6 +1,5 @@
 package it.unikey.uniapp.DAL.Entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

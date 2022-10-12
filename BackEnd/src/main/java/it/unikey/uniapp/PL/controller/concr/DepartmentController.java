@@ -67,7 +67,7 @@ public class DepartmentController implements GenericController<DepartmentRest> {
 
     @Override
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(Integer id) {
+    public ResponseEntity<Void> deleteById( Integer id) {
         try{
             service.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
